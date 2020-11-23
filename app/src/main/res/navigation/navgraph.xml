@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/top_MovieFragment">
+
+    <fragment
+        android:id="@+id/top_MovieFragment"
+        android:name="com.example.movie.fragment.Top_MovieFragment"
+        android:label="fragment_top__movie"
+        tools:layout="@layout/fragment_top__movie" />
+    <fragment
+        android:id="@+id/expectedFragment"
+        android:name="com.example.movie.fragment.ExpectedFragment"
+        android:label="fragment_expected"
+        tools:layout="@layout/fragment_expected" />
+</navigation>
