@@ -61,10 +61,10 @@ class Adapter(
             LayoutInflater.from(context).inflate(R.layout.adapter, parent, false)
         )
 
-    override fun getItemCount(): Int = movie!!.size
+    override fun getItemCount(): Int = movie.size
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.View(movie!![position], this.context, this.boolean, listener)
+        holder.View(movie[position], this.context, this.boolean, listener)
     }
 }
 

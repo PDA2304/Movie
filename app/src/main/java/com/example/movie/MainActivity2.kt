@@ -15,6 +15,11 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        val anim : Animation
+
+        anim = AnimationUtils.loadAnimation(this,R.anim.main)
+        main.startAnimation(anim)
+
         var item = intent.getParcelableExtra<Model>("OBJECK")
         Title.text = item?.title
         vote_average.text = item?.vote_average
