@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/top_MovieFragment">
+    app:startDestination="@id/top">
 
     <fragment
-        android:id="@+id/top_MovieFragment"
+        android:id="@+id/top"
         android:name="com.example.movie.fragment.Top_MovieFragment"
         android:label="fragment_top__movie"
         tools:layout="@layout/fragment_top__movie" />
     <fragment
-        android:id="@+id/expectedFragment"
+        android:id="@+id/expected"
         android:name="com.example.movie.fragment.ExpectedFragment"
         android:label="fragment_expected"
         tools:layout="@layout/fragment_expected" />

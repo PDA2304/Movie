@@ -8,10 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movie.API
-import com.example.movie.Adapter
-import com.example.movie.Model
-import com.example.movie.R
+import com.example.movie.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -43,24 +40,25 @@ class Top_MovieFragment : Fragment() {
                 array.clear()
                 while (json.length() > i) {
                     var item = Model(
-                        json.getJSONObject(i).getString("vote_average"),
+                        "Оценка:"+json.getJSONObject(i).getString("vote_average")+"/10",
                         json.getJSONObject(i).getString("title"),
-                        json.getJSONObject(i).getString("release_date"),
+                        "Дата выхода"+json.getJSONObject(i).getString("release_date"),
                         json.getJSONObject(i).getString("poster_path"),
                         json.getJSONObject(i).getString("overview")
                     )
+                    array.add(item)
+                    i++
                 }
 
                 activity!!.runOnUiThread{
                     val recycler = v.findViewById<RecyclerView>(R.id.imageRecyclerView)
-                    recycler.layoutManager = LinearLayoutManager(v.context)
+                    recycler.layoutManager = LinearLayoutManager(activity)
                     recycler.setHasFixedSize(true)
                     val adapter: Adapter = Adapter(v.context, array,false)
                     {
-//                        var intent = Intent(this@MainActivity, MainActivity2::class.java)
-//                        intent.putExtra("OBJECK", it)
-//                        startActivity(intent)
-//                        Animatoo.animateSpin(this)
+                        var intent = Intent(context, MainActivity2::class.java)
+                        intent.putExtra("OBJECK", it)
+                        startActivity(intent)
                     }
                     recycler.adapter = adapter
                 }

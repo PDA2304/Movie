@@ -49,7 +49,6 @@ class Adapter(
                     }
 
                     override fun onError() {
-
                     }
                 })
 
